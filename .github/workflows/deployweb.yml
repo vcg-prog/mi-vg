@@ -1,0 +1,16 @@
+python
+  
+import os
+os.environ["FLET_SESSION_NO_SSL_VERIFY"] = "true"
+
+import flet as ft
+def main(page: ft.Page):
+    page.title ="algo"
+    texto = ft.Text("Hola mundo")
+    page.add(texto)
+    def cambiar_texto(e):
+        texto.value = "Hola mundo, ahora con Flet"
+        page.update()
+    boton = ft.Button("Cambiar texto", on_click=cambiar_texto)
+    page.add(boton)
+ft.run(main)
